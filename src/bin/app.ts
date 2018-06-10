@@ -42,7 +42,7 @@ app.use(
         res,
       },
     };
-  }),
+  })
 );
 
 let defaultRedirect = END_POINTS.API;
@@ -52,7 +52,7 @@ if (NODE_ENV === 'development') {
     END_POINTS.DEBUGGER,
     graphiqlExpress({
       endpointURL: END_POINTS.API,
-    }),
+    })
   );
   defaultRedirect = END_POINTS.DEBUGGER;
 }
