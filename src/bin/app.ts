@@ -24,30 +24,36 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Setup GraphQL routes
 const END_POINTS = {
   API: '/graphql',
-  DEBUGGER: '/graphiql'
+  DEBUGGER: '/graphiql',
 };
 
-app.use(END_POINTS.API, graphqlExpress((req, res) => {
-  const schema = makeExecutableSchema({
-    typeDefs,
-    resolvers
-  });
+app.use(
+  END_POINTS.API,
+  graphqlExpress((req, res) => {
+    const schema = makeExecutableSchema({
+      typeDefs,
+      resolvers,
+    });
 
-  return {
-    schema,
-    context: {
-      req,
-      res
-    }
-  }
-}));
+    return {
+      schema,
+      context: {
+        req,
+        res,
+      },
+    };
+  }),
+);
 
 let defaultRedirect = END_POINTS.API;
 if (NODE_ENV === 'development') {
   // Setup GraphQL routes for debugger
-  app.use(END_POINTS.DEBUGGER, graphiqlExpress({
-    endpointURL: END_POINTS.API
-  }));
+  app.use(
+    END_POINTS.DEBUGGER,
+    graphiqlExpress({
+      endpointURL: END_POINTS.API,
+    }),
+  );
   defaultRedirect = END_POINTS.DEBUGGER;
 }
 

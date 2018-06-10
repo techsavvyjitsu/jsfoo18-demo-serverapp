@@ -22,12 +22,6 @@
     "noImplicitReturns": true,
     "noImplicitThis": true
   },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/__test__"
-  ]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "**/__test__"]
 }

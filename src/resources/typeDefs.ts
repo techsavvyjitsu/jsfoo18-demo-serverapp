@@ -27,7 +27,7 @@ export default `
     website: String
     company: Company
   }
-  
+
   type Query {
     users: [User]
     userById (id: Int!): User

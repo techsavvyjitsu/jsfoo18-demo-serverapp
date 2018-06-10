@@ -14,10 +14,8 @@ const server = http.createServer(app);
 const getAddressBind = () => {
   const addr = server.address();
 
-  return typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-}
+  return typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+};
 
 // Event listener for HTTP server "error" event.
 const onError = (error: any) => {
@@ -40,12 +38,12 @@ const onError = (error: any) => {
     default:
       throw error;
   }
-}
+};
 
 // Event listener for HTTP server "listening" event.
 const onListening = () => {
   debug(`Server is up and running on ${getAddressBind()}`);
-}
+};
 
 // Listen server to a configured port
 server.listen(port);
@@ -55,4 +53,3 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 export default server;
-
