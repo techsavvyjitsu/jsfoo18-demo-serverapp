@@ -41,7 +41,7 @@
     "@types/errorhandler": "0.0.32",
     "@types/express": "^4.16.0",
     "@types/graphql": "^0.13.1",
-    "@types/helmet": "0.0.38",
+    "@types/helmet": "0.0.48",
     "@types/jest": "^23.0.0",
     "@types/node": "^10.3.2",
     "apollo-codegen": "^0.19.1",
